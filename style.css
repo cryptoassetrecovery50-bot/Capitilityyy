@@ -1,376 +1,226 @@
-/* ========================= GLOBAL ========================= */
-* { box-sizing: border-box; }
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planuri - Capitility Forex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header>
+    <nav>
+        <a href="index.html">Acasă</a>
+        <a href="planuri.html" class="active">Planuri</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="plans-container">
+
+    <h1>Planuri de Investiție Profitabile</h1>
+
+    <div class="plans-grid">
+
+        <!-- PLAN 1 -->
+        <div class="plan-card">
+            <h2>Plan 1 – Start Profitabil</h2>
+            <p>Investiție minimă: 50 USD</p>
+            <p>Durată: 7 zile</p>
+            <p>Profit: 8%</p>
+            <button onclick="openModal(1)">Activează Plan</button>
+        </div>
+
+        <!-- PLAN 2 -->
+        <div class="plan-card">
+            <h2>Plan 2 – Creștere Stabilă</h2>
+            <p>Investiție minimă: 150 USD</p>
+            <p>Durată: 7 zile</p>
+            <p>Profit: 15%</p>
+            <button onclick="openModal(2)">Activează Plan</button>
+        </div>
+
+        <!-- PLAN 3 -->
+        <div class="plan-card">
+            <h2>Plan 3 – Avansat</h2>
+            <p>Investiție minimă: 350 USD</p>
+            <p>Durată: 7 zile</p>
+            <p>Profit: 22%</p>
+            <button onclick="openModal(3)">Activează Plan</button>
+        </div>
+
+        <!-- PLAN 4 -->
+        <div class="plan-card">
+            <h2>Plan 4 – Profit Maxim</h2>
+            <p>Investiție minimă: 500 USD</p>
+            <p>Durată: 7 zile</p>
+            <p>Profit: 30%</p>
+            <button onclick="openModal(4)">Activează Plan</button>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- 🔥 MODAL VECHI EXACT CA ÎN SCREENSHOT 🔥 -->
+<div id="planModal" class="modal">
+    <div class="modal-content">
+        <h2 id="planTitle">Titlu Plan</h2>
+
+        <input type="text" placeholder="Introduceți adresa de email">
+        <input type="text" placeholder="Introduceți adresa de primire">
+
+        <select id="planSelect">
+            <option>Plan 1 – Start Profitabil</option>
+            <option>Plan 2 – Creștere Stabilă</option>
+            <option>Plan 3 – Avansat</option>
+            <option>Plan 4 – Profit Maxim</option>
+        </select>
+
+        <h3>Metode de plată:</h3>
+
+        <p><strong>USDT TRC20</strong><br>TSQWY2SbB…MNEJSUCT8</p>
+        <p><strong>USDT ERC20</strong><br>0xEFF833572…A8898071aa1C0</p>
+        <p><strong>USDC TRC20</strong><br>TSQWY2SbB…MNEJSUCT8</p>
+        <p><strong>USDC ERC20</strong><br>0xEFF833572…A8898071aa1C0</p>
+
+        <div class="modal-buttons">
+            <button class="activate">Activează Plan</button>
+            <button class="close" onclick="closeModal()">Închide</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
 body {
-    margin: 0;
-    font-family: Inter, system-ui, Arial, sans-serif;
-    background: url('section_bg.jpg') center/cover no-repeat fixed;
-    color: #e6eef6;
-    line-height: 1.6;
-    opacity: 0;
-    transition: opacity .4s ease-in-out;
-}
-
-body.fade-in { opacity: 1; }
-
-html, body {
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-:root {
-    --bg:#071023;
-    --card:#0f1720;
-    --muted:#9aa4b2;
-    --accent:#f2c94c;
-}
-
-/* ========================= HEADER ========================= */
-header {
-    background: rgba(3,6,10,0.95);
-    backdrop-filter: blur(4px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 18px;
-    height: 54px;
-}
-
-.brand {
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 20px;
-}
-
-/* LINKS desktop */
-.navlinks {
-    display: flex;
-    align-items: center;
-}
-
-.navlinks a {
-    color: #e6eef6;
-    margin-left: 18px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* ========= BUTON MENIU MOBILE ========= */
-.menu-btn {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
+    background: #02040a;
+    font-family: Arial;
     color: white;
-    user-select: none;
+    margin: 0;
 }
 
-/* Checkbox ascuns */
-#menu-toggle {
-    display: none;
-}
-
-/* ========= MENIU MOBIL VARIANTA A ========= */
-.mobile-menu {
-    display: none;
-    flex-direction: column;
-    background: rgba(3,6,10,0.97);
-    backdrop-filter: blur(4px);
-    position: absolute;
-    top: 54px;
-    right: 0;
-    width: 100%;
-    padding: 20px 0;
-    z-index: 1001;
-}
-
-.mobile-menu a {
-    color: #fff;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px;
-}
-
-.mobile-menu a:hover {
-    background: rgba(255,255,255,0.05);
-}
-
-/* Afișează meniul când checkbox este bifat */
-#menu-toggle:checked ~ .mobile-menu {
-    display: flex;
-}
-
-/* ========================= SECTIONS ========================= */
-.section {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 30px;
-}
-
-/* ========= CARD UNIVERSAL ========= */
-.blog-article {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(8px);
-    padding: 35px 40px;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.08);
-    margin-bottom: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-}
-
-/* ========================= CONTACT ========================= */
-.contact-wrapper {
-    max-width: 1100px;
-    margin: 80px auto;
-    padding: 40px 50px;
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-}
-
-.contact-wrapper h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.contact-wrapper h3 {
-    font-size: 20px;
-    color: var(--muted);
-    margin-bottom: 20px;
-}
-
-.contact-wrapper p,
-.contact-wrapper a {
-    font-size: 18px;
-}
-
-.contact-wrapper .btn-whatsapp {
-    background: #f2c94c;
-    padding: 8px 18px;
-    border-radius: 10px;
-    font-weight: 700;
-    color: #000;
-    border: none;
-    cursor: pointer;
-}
-
-.contact-wrapper .btn-whatsapp:hover {
-    opacity: .85;
-}
-
-@media(max-width:700px) {
-    .contact-wrapper {
-        padding: 25px;
-        margin: 40px 10px;
-    }
-}
-
-/* ========================= PLANURI ========================= */
-.card-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
-
-.plan-card {
-    background: var(--card);
-    border-radius: 12px;
-    padding: 22px;
-    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-    border: 1px solid rgba(255,255,255,0.03);
-    transition: .18s;
-}
-
-.plan-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(2,6,23,0.7);
-}
-
-.plan-card p {
-    margin: 6px 0;
-    color: var(--muted);
-}
-
-/* ========================= TRANSPARENȚĂ ========================= */
-.trans-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: start;
-}
-
-.trans-item {
-    max-width: 500px;
-    padding: 25px;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.45);
-}
-
-.trans-item img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 12px;
-    margin-top: 10px;
-}
-
-@media(max-width: 700px) {
-    .trans-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ========================= CHAT BUTTON ========================= */
-.chat-btn {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    background: #25D366;
-    color: #fff;
-    width: 62px;
-    height: 62px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    box-shadow: 0 8px 30px rgba(37,211,102,0.18);
-    cursor: pointer;
-    z-index: 999;
-}
-
-/* ========================= MOBILE CHANGES ========================= */
-@media(max-width:720px) {
-    .navlinks { display: none; }
-    .menu-btn { display: block; }
-    .card-row { grid-template-columns: 1fr; }
-}
-
-/* ========================= TITLURI MOBILE ========================= */
-.home-title,
-.plan-title {
-    font-size: 28px !important;
-    line-height: 1.2;
-    margin-top: 20px;
-    text-align: center;
-}
-
-@media(max-width: 700px) {
-    .home-title,
-    .plan-title {
-        font-size: 22px !important;
-        margin-top: 10px;
-    }
-}
-
-/* ========================= FIX TEXT SUB BARĂ ========================= */
 header {
-    height: 54px;
-}
-/* ====== TITLU INDEX FIX (MOBILE + DESKTOP) ====== */
-
-.title-main {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.25;
-    margin-bottom: 20px;
-    color: #ffffff;
+    background: #060b19;
+    padding: 15px;
+    text-align: center;
 }
 
-/* TELEFON */
-@media(max-width: 700px) {
-    .title-main {
-        font-size: 24px;
-        text-align: center;
-        line-height: 1.3;
-        padding: 0 10px;
-        margin-top: 10px;
-    }
-}
-.hero h1 {
-    font-size: 1.375rem; /* 22px */
-    font-weight: 700;
-    line-height: 1.25;
-    text-align: center;
-    max-width: 90%;
-    margin: 0 auto 1rem auto;
-}
-.planuri-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #f2c94c;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.planuri-subtitle {
-    text-align: center;
-    color: #9aa4b2;
-    margin-bottom: 40px;
+nav a {
+    margin: 0 20px;
+    color: white;
+    text-decoration: none;
     font-size: 18px;
 }
 
-.plan-grid {
+nav a.active {
+    color: #ffc44d;
+}
+
+.plans-container {
+    padding: 40px;
+    text-align: center;
+}
+
+.plans-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    max-width: 1200px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 900px;
     margin: auto;
 }
 
-.plan-box {
-    background: rgba(1, 10, 22, 0.85);
+.plan-card {
+    background: rgba(255, 255, 255, 0.05);
     padding: 25px;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.05);
 }
 
-.plan-box h2 {
-    margin-top: 0;
-    font-size: 20px;
-    margin-bottom: 12px;
+.plan-card button {
+    margin-top: 15px;
+    background: #ffc44d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.plan-box p {
-    margin: 6px 0;
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
 }
 
-.plan-btn {
-    display: inline-block;
-    background: #f2c94c;
-    color: #000;
-    font-weight: 700;
-    padding: 6px 15px;
-    border-radius: 6px;
-    text-decoration: none;
+.modal-content {
+    width: 350px;
+    background: rgba(0,0,0,0.8);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
     margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    background: #111;
+    border: 1px solid #333;
+    color: white;
 }
 
-@media(max-width: 900px) {
-    .plan-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
-@media(max-width: 600px) {
-    .plan-grid {
-        grid-template-columns: 1fr;
-    }
+.activate {
+    background: #ffc44d;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
 }
+
+.close {
+    background: #333;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+}
+const modal = document.getElementById("planModal");
+const modalTitle = document.getElementById("planTitle");
+const planSelect = document.getElementById("planSelect");
+
+function openModal(plan) {
+
+    const names = {
+        1: "Plan 1 – Start Profitabil",
+        2: "Plan 2 – Creștere Stabilă",
+        3: "Plan 3 – Avansat",
+        4: "Plan 4 – Profit Maxim"
+    };
+
+    modalTitle.textContent = names[plan];
+    planSelect.value = names[plan];
+
+    modal.style.display = "flex";
+}
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
