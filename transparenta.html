@@ -1,106 +1,20 @@
-<!doctype html>
-<html lang="ro">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Transparență - Capitility Forex</title>
-<link rel="stylesheet" href="style.css">
-
-<style>
-/* Fade IN + Slide UP */
-body {
-    opacity: 0;
-    transform: translateY(15px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
-}
-body.loaded {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Fade OUT */
-.fade-out {
-    opacity: 0 !important;
-    transform: translateY(10px) !important;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-/* Titlu galben – UNICA modificare */
-.section h2 {
-    color: #FFD700 !important;
-}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("loaded");
-
-    const links = document.querySelectorAll("a:not([target])");
-
-    links.forEach(link => {
-        link.addEventListener("click", function(e) {
-            const url = this.href;
-            if (!url.includes("#")) {
-                e.preventDefault();
-                document.body.classList.add("fade-out");
-                setTimeout(() => { window.location.href = url; }, 350);
-            }
-        });
-    });
-});
-</script>
-
-</head>
-
-<body class="transparenta">
-
-<header>
-    <div class="nav">
-        <div class="brand">Capitility Forex</div>
-        <div class="navlinks">
-            <a href="index.html">Acasă</a>
-            <a href="planuri.html">Planuri</a>
-            <a href="despre-noi.html">Despre noi</a>
-            <a href="blog.html">Blog</a>
-            <a href="transparenta.html">Transparență</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </div>
-</header>
-
+<!doctype html><html lang='ro'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Transparență - Capitility Forex</title><link rel="stylesheet" href="style.css"></head><body class="trans transparenta" >
+<header><div class="nav"><div class="brand">Capitility Forex</div><div class="navlinks"><a href="index.html">Acasă</a><a href="planuri.html">Planuri</a><a href="despre-noi.html">Despre noi</a><a href="blog.html">Blog</a><a href="transparenta.html">Transparență</a><a href="contact.html">Contact</a></div></div></header>
 <section class="section">
-
-    <h2>Transparență și încredere</h2>
-
-    <p style="color:#e6eef6; margin-bottom:25px;">
-        La Capitility Forex, transparența este fundamentul relației dintre noi și investitori.
-        Punem la dispoziție informații clare despre identitatea companiei, sediu și documente oficiale.
-    </p>
-
-    <div class="trans-row">
-
-        <div class="trans-item">
-            <h3>Sediul Capitility Forex</h3>
-            <p>
-                Capitility Forex își desfășoară activitatea într-un sediu modern, conceput pentru operațiuni financiare.
-            </p>
-            <img src="office.jpg" alt="sediu">
-        </div>
-
-        <div class="trans-item">
-            <h3>Certificatul oficial de înregistrare</h3>
-            <p>
-                Compania este înregistrată ca Private Limited Company și funcționează conform legislației în vigoare.
-            </p>
-            <img src="cert.jpg" alt="certificat">
-        </div>
-
+  <h2>Transparență și încredere</h2>
+  <p>La Capitility Forex, transparența este fundamentul relației dintre noi și investitori. Punem la dispoziție informații clare despre identitatea companiei, locația sediului, documentele oficiale și procesele interne, astfel încât fiecare investitor să știe cu cine lucrează și în ce sistem își plasează capitalul.</p>
+  <div class="trans-row" style="margin-top:18px">
+    <div class="trans-item">
+      <h4>Sediul Capitility Forex</h4>
+      <p>Capitility Forex își desfășoară activitatea în cadrul unui sediu modern, special conceput pentru operațiuni financiare și dezvoltare tehnologică. Clădirea reflectă profesionalismul companiei și oferă un mediu dedicat echipei de analiză, tehnologie și suport investitori.</p>
+      <img src="office.jpg" alt="sediu">
     </div>
+    <div class="trans-item">
+      <h4>Certificatul oficial de înregistrare</h4>
+      <p>Capitility Forex este înregistrată ca Private Limited Company, iar statutul său juridic este documentat printr-un certificat oficial emis conform legislației în vigoare.</p>
+      <img src="cert.jpg" alt="certificat">
+    </div>
+  </div>
 </section>
-
-<footer class="footer">
-    © 2025 Capitility Forex
-</footer>
-
-</body>
-</html>
+<footer class='footer'>© 2025 Capitility Forex</footer>
+</body></html>
