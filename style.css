@@ -1,12 +1,12 @@
-/* Reset */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Header fix */
-header {
+/* HEADER FIX + MENIU VIZIBIL PE ORICE DISPOZITIV */
+.header {
     width: 100%;
     background: #000;
     color: white;
@@ -25,10 +25,9 @@ header {
     font-weight: bold;
 }
 
-/* Meniul AFIȘAT PE ORICE ECRAN (telefon + laptop) */
 .navbar {
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 .navbar a {
@@ -42,14 +41,13 @@ header {
     color: #ffcc00;
 }
 
-/* Secțiuni generale */
+/* SECTIUNI */
 section {
     padding: 80px 20px;
-    margin-top: 60px;
-    font-size: 18px;
+    margin-top: 70px;
 }
 
-/* Hero section */
+/* HERO SECTION */
 .hero {
     background: url("hero.jpg") center/cover no-repeat;
     color: white;
@@ -66,10 +64,10 @@ section {
     font-size: 22px;
 }
 
-/* Telefon – păstrăm meniul identic, doar micșorăm puțin fontul */
+/* MOBILE—PĂSTRĂM MENIUL IDENTIC, DOAR MICȘORĂM FONTURILE */
 @media (max-width: 600px) {
     .navbar {
-        gap: 10px;
+        gap: 12px;
     }
 
     .navbar a {
