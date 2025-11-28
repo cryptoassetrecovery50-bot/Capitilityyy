@@ -1,136 +1,84 @@
-body{margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:url('section_bg.jpg') center/cover no-repeat fixed; color:#e6eef6;line-height:1.6}
-
-:root{
-  --bg:#071023;
-  --card:#0f1720;
-  --muted:#9aa4b2;
-  --accent:#f2c94c;
-  --glass: rgba(255,255,255,0.03);
-}
-*{box-sizing:border-box}
-
-header{background:rgba(3,6,10,0.95);backdrop-filter:blur(4px);position:sticky;top:0;z-index:40}
-.nav{width:100%;margin:0;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-.brand{color:var(--accent);font-weight:700}
-.navlinks a{color:#e6eef6;margin-left:18px;text-decoration:none;font-weight:600}
-.hero{padding:90px 20px 120px;position:relative}
-.hero-overlay{max-width:1100px;margin:0 auto;padding:40px;border-radius:10px}
-.hero h1{font-size:36px;margin:0 0 12px}
-.hero p{color:var(--muted);font-size:16px}
-.section{max-width:1100px;margin:40px auto;padding:30px}
-.card-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.plan-card{background:var(--card);border-radius:12px;padding:22px;box-shadow:0 8px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03);transition:transform .18s, box-shadow .18s}
-.plan-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.7)}
-.plan-card h3{margin:0 0 8px}
-.plan-card p{margin:6px 0;color:var(--muted)}
-.btn{display:inline-block;background:var(--accent);color:#081221;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700;border:none;cursor:pointer}
-.footer{background:#06101a;padding:24px;text-align:center;color:var(--muted);margin-top:40px}
-.modal-back{position:fixed;inset:0;background:rgba(1,2,5,0.6);display:flex;align-items:center;justify-content:center;z-index:80;visibility:hidden;opacity:0;transition:opacity .2s}
-.modal{background:#fff;color:#091223;border-radius:12px;padding:18px;max-width:520px;width:92%;box-shadow:0 20px 60px rgba(2,6,23,0.6)}
-.modal h4{margin:0 0 12px}
-.input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf5;margin-bottom:8px}
-.pay-list{background:#f7fafc;padding:12px;border-radius:8px;color:#091623;font-family:monospace;max-height:160px;overflow:auto}
-.copy-btn{background:#0b74a6;color:#fff;border:none;padding:6px 8px;border-radius:6px;cursor:pointer;margin-left:8px}
-.chat-btn{position:fixed;right:22px;bottom:22px;background:#25D366;color:#fff;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 8px 30px rgba(37,211,102,0.18);cursor:pointer;z-index:90}
-.contact-box{background:#fff;color:#091022;border-radius:12px;padding:18px;box-shadow:0 12px 30px rgba(2,6,23,0.4);max-width:700px;margin:20px auto}
-.blog-article{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;margin-bottom:18px;border:1px solid rgba(255,255,255,0.03)}
-.trans-row{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start}
-.trans-item{flex:1;min-width:260px;background:var(--card);padding:16px;border-radius:10px}
-.trans-item img{width:100%;border-radius:8px}
-@media(max-width:720px){.hero h1{font-size:24px}.navlinks{display:none}.card-row{grid-template-columns:1fr}}
-
-.home-bg{
- 
- padding:40px;
- color:white;
-}
-.chat-btn{
- position:fixed;
- bottom:20px;
- right:20px;
- background:#FFD700;
- color:black;
- padding:15px 20px;
- border-radius:30px;
- font-weight:bold;
- text-decoration:none;
- box-shadow:0 0 10px rgba(0,0,0,0.4);
+/* NAVBAR */
+.navbar {
+    background: #000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
 }
 
-.home-bg{}
-
-.home-bg, .hero-overlay, .overlay, .content-box {
-  background: rgba(0,0,0,0.55);
-  padding:40px;
-  border-radius:12px;
-  max-width:1000px;
-  margin: 60px auto;
-  color: #e6eef6;
-}
-.hero{ background: none; padding: 80px 20px 120px; position:relative; min-height:60vh; }
-
-
-/* Overrides to remove black boxes */
-body.despre .hero-overlay,
-body.trans .content-box,
-body.contact .content-box {
-  background: none !important;
-  padding: 0 !important;
-  box-shadow: none !important;
+.logo {
+    font-size: 22px;
+    font-weight: bold;
 }
 
-
-/* OVERRIDES */
-body.despre_noi .hero,
-body.transparenta .content-section,
-body.contact .contact-section {
-    background:none !important;
-    box-shadow:none !important;
+.menu-toggle {
+    display: none;
 }
 
-/* FIX ACASA – full width complet real */
-body.index .home-bg,
-body.index .hero-overlay,
-body.index .overlay,
-body.index .content-box {
-    max-width: none !important;
-    width: 100% !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
 }
 
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
 
-/* About section layout */
-.about-combined .container{max-width:1100px;margin:0 auto;padding:20px}
-.about-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.about-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)} 
-@media(max-width:900px){.about-row{grid-template-columns:1fr} .about-combined .container{padding:10px}}
-
-
-/* Responsive fixes */
+/* MOBILE NAV */
 @media (max-width: 768px) {
-  header nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        padding: 20px;
+        margin-top: 10px;
+    }
 
-  .hero-section, .main-section, .about, .plans, .contact-section {
-    padding: 20px !important;
-    text-align: center;
-  }
+    .menu-toggle {
+        display: block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
 
-  .hero-section h1, .main-section h1 {
-    font-size: 28px !important;
-  }
-
-  .hero-section p, .main-section p {
-    font-size: 16px !important;
-  }
-
-  .container, .text-container, .content, .about-combined {
-    max-width: 95% !important;
-    margin: auto !important;
-  }
+    #menu-toggle:checked ~ .menu {
+        display: flex;
+    }
 }
+
+/* HERO SECTION */
+.hero {
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.6;
+    color: white;
+    text-align: left;
+}
+
+/* GENERAL PAGE STYLES */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a0f1c;
+    color: white;
+}
+
+section {
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
