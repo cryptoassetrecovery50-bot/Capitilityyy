@@ -265,4 +265,24 @@ header {
     background: #f2c94c !important;
     color: #000 !important;
 }
+/* Ascunde checkbox-ul */
+#nav-check {
+    display: none;
+}
+/* ============== FIX TEXT SUB MENIU ============== */
+.home-title,
+.plan-title {
+    font-size: 28px !important;
+    line-height: 1.2;
+    margin-top: 20px;
+    text-align: center;
+}
+
+@media(max-width: 700px) {
+    .home-title,
+    .plan-title {
+        font-size: 24px !important;
+        margin-top: 10px;
+    }
+}
 
