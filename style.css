@@ -1,288 +1,131 @@
-/* ========================= GLOBAL ========================= */
-* { box-sizing: border-box; }
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capitility Forex</title>
 
+<!-- CSS -->
+<link rel="stylesheet" href="style.css?v=1000">
+
+<!-- Fade-in/out CSS -->
+<style>
 body {
-    margin: 0;
-    font-family: Inter, system-ui, Arial, sans-serif;
-    background: url('section_bg.jpg') center/cover no-repeat fixed;
-    color: #e6eef6;
-    line-height: 1.6;
     opacity: 0;
-    transition: opacity .4s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
+body.loaded {
+    opacity: 1;
+}
+body.fade-out {
+    opacity: 0;
+}
+</style>
+</head>
 
-body.fade-in { opacity: 1; }
+<body class="index">
+<div class="home-bg">
 
-html, body {
-    height: 100%;
-}
+<header>
+  <div class="nav">
 
-body {
-    display: flex;
-    flex-direction: column;
-}
+    <div class="brand">Capitility Forex</div>
 
-:root {
-    --bg:#071023;
-    --card:#0f1720;
-    --muted:#9aa4b2;
-    --accent:#f2c94c;
-}
+    <!-- Meniu telefon -->
+    <input type="checkbox" id="menu-toggle">
+    <label class="menu-btn" for="menu-toggle">&#9776;</label>
 
-/* ========================= HEADER ========================= */
-header {
-    background: rgba(3,6,10,0.95);
-    backdrop-filter: blur(4px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+    <div class="navlinks">
+      <a href="index.html">Acasă</a>
+      <a href="planuri.html">Planuri</a>
+      <a href="despre-noi.html">Despre noi</a>
+      <a href="blog.html">Blog</a>
+      <a href="transparenta.html">Transparență</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
-.nav {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 18px;
-    height: 54px;
-}
+  </div>
+</header>
 
-.brand {
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 20px;
-}
+<section class="section">
+  <div class="blog-article">
 
-/* LINKS pe desktop */
-.navlinks {
-    display: flex;
-    align-items: center;
-}
+    <h1 class="title-main">
+      Capitility Forex – Calea ta către libertate financiară
+    </h1>
 
-.navlinks a {
-    color: #e6eef6;
-    margin-left: 18px;
-    text-decoration: none;
-    font-weight: 600;
-}
+    <p>
+      Capitility Forex este o societate privată înființată la 9 iunie 2019, construită
+      pe încrederea și aprecierea clienților și investitorilor din întreaga lume.
+      Succesul nostru se datorează devotamentului echipei, muncii consecvente și
+      expertizei acumulate, susținute de tehnologii avansate și sisteme testate în timp.
+    </p>
 
-/* ========= BUTON MENIU MOBILE ========= */
-.menu-btn {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-}
+    <p>
+      Misiunea noastră este să oferim investitorilor o modalitate simplă, eficientă și
+      sigură de a investi și de a urmări evoluția câștigurilor.
+    </p>
 
-/* ========= MENIU MOBIL ========= */
-.mobile-menu {
-    display: none;
-    flex-direction: column;
-    background: rgba(3,6,10,0.97);
-    backdrop-filter: blur(4px);
-    position: absolute;
-    top: 54px;
-    right: 0;
-    width: 100%;
-    padding: 20px 0;
-    z-index: 1001;
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
+    <p class="highlight">
+      🌐 Libertatea ta financiară începe alături de Capitility Forex
+    </p>
 
-.mobile-menu a {
-    color: #fff;
-    padding: 14px 20px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px;
-}
+    <p>
+      Suntem un lider în industria managementului de active, oferind soluții accesibile
+      tuturor celor care doresc să investească în criptomonede și piețele financiare.
+      Echipa noastră lucrează dedicat pentru a-ți crește marja de profit prin investiții
+      bine structurate și strategii sigure.
+    </p>
 
-.mobile-menu a:hover {
-    background: rgba(255,255,255,0.05);
-}
+    <p><strong>Investiții ușoare, profit rapid</strong></p>
 
-/* ========================= SECTIONS ========================= */
-.section {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 30px;
-}
+    <p>
+      Programul nostru de gestionare a activelor este creat astfel încât să reducă
+      riscurile și, în același timp, să ofere profituri competitive într-un timp scurt.
+      Nu ai nevoie de experiență în trading — selectezi un plan, iar profesioniștii noștri
+      se ocupă de tot.
+    </p>
 
-/* ========= CARD UNIVERSAL ========= */
-.blog-article {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(8px);
-    padding: 35px 40px;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.08);
-    margin-bottom: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-}
+    <p><strong>Partenerul tău de încredere</strong></p>
 
-/* ========================= CONTACT ========================= */
-.contact-wrapper {
-    max-width: 1100px;
-    margin: 80px auto;
-    padding: 40px 50px;
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-}
+    <p>
+      Le oferim investitorilor noștri suport, expertiză și acces la resurse esențiale
+      pentru a construi rezultate solide și durabile. Selectăm oportunitățile potrivite
+      și partenerii ce împărtășesc valorile noastre — totul pentru cele mai bune rezultate.
+    </p>
 
-.contact-wrapper h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
+  </div>
+</section>
 
-.contact-wrapper h3 {
-    font-size: 20px;
-    color: var(--muted);
-    margin-bottom: 20px;
-}
+<!-- CHAT BUTTON -->
+<a href="https://t.me/SuportCapitilityForex" class="chat-btn">Chat</a>
 
-.contact-wrapper p,
-.contact-wrapper a {
-    font-size: 18px;
-}
+<script src="script.js"></script>
 
-.contact-wrapper .btn-whatsapp {
-    background: #f2c94c;
-    padding: 8px 18px;
-    border-radius: 10px;
-    font-weight: 700;
-    color: #000;
-    border: none;
-    cursor: pointer;
-}
+<!-- Fade-in/out JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("loaded");
+});
 
-.contact-wrapper .btn-whatsapp:hover {
-    opacity: .85;
-}
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
 
-@media(max-width:700px) {
-    .contact-wrapper {
-        padding: 25px;
-        margin: 40px 10px;
-    }
-}
+        if (!href.startsWith("#") && !href.startsWith("javascript")) {
+            e.preventDefault();
+            document.body.classList.add("fade-out");
 
-/* ========================= PLANURI ========================= */
-.card-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
+            setTimeout(() => {
+                window.location = href;
+            }, 350);
+        }
+    });
+});
+</script>
 
-.plan-card {
-    background: var(--card);
-    border-radius: 12px;
-    padding: 22px;
-    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-    border: 1px solid rgba(255,255,255,0.03);
-    transition: .18s;
-}
+</div>
+</body>
+</html>
 
-.plan-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(2,6,23,0.7);
-}
-
-.plan-card p {
-    margin: 6px 0;
-    color: var(--muted);
-}
-
-/* ========================= TRANSPARENȚĂ ========================= */
-.trans-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: start;
-}
-
-.trans-item {
-    max-width: 500px;
-    padding: 25px;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.45);
-}
-
-.trans-item img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 12px;
-    margin-top: 10px;
-}
-
-@media(max-width: 700px) {
-    .trans-row {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ========================= CHAT BUTTON ========================= */
-.chat-btn {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    background: #25D366;
-    color: #fff;
-    width: 62px;
-    height: 62px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    box-shadow: 0 8px 30px rgba(37,211,102,0.18);
-    cursor: pointer;
-    z-index: 999;
-}
-
-/* ========================= MOBILE CHANGES ========================= */
-@media(max-width:720px) {
-    .navlinks { display: none; }
-    .menu-btn { display: block; }
-    .card-row { grid-template-columns: 1fr; }
-}
-
-/* ========================= FOOTER ========================= */
-.footer {
-    background: #06101a;
-    padding: 24px;
-    text-align: center;
-    color: var(--muted);
-    margin-top: auto;
-}
-
-.plan-card .btn {
-    background: #f2c94c !important;
-    color: #000 !important;
-}
-/* Ascunde checkbox-ul */
-#nav-check {
-    display: none;
-}
-/* ============== FIX TEXT SUB MENIU ============== */
-.home-title,
-.plan-title {
-    font-size: 28px !important;
-    line-height: 1.2;
-    margin-top: 20px;
-    text-align: center;
-}
-
-@media(max-width: 700px) {
-    .home-title,
-    .plan-title {
-        font-size: 24px !important;
-        margin-top: 10px;
-    }
-}
 
