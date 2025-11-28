@@ -1,81 +1,155 @@
-/* RESET */
-* {
+/* ========================= GLOBAL ========================= */
+* { box-sizing: border-box; }
+
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: Inter, system-ui, Arial, sans-serif;
+    background: url('section_bg.jpg') center/cover no-repeat fixed;
+    color: #e6eef6;
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
 }
 
-/* HEADER FIX + MENIU VIZIBIL PE ORICE DISPOZITIV */
-.header {
-    width: 100%;
-    background: #000;
-    color: white;
-    padding: 15px 20px;
+body.fade-in { opacity: 1; }
+
+html, body {
+    height: 100%;
+}
+
+body {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
+    flex-direction: column;
+}
+
+:root {
+    --bg:#071023;
+    --card:#0f1720;
+    --muted:#9aa4b2;
+    --accent:#f2c94c;
+}
+
+/* ========================= HEADER ========================= */
+header {
+    background: rgba(3,6,10,0.95);
+    backdrop-filter: blur(4px);
+    position: sticky;
     top: 0;
-    left: 0;
     z-index: 1000;
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.navbar {
+.nav {
+    width: 100%;
     display: flex;
-    gap: 25px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
 }
 
-.navbar a {
-    color: white;
+/* BRAND */
+.brand {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* MENIU DESKTOP */
+.navlinks {
+    display: flex;
+    gap: 20px;
+}
+
+.navlinks a {
+    color: #e6eef6;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
-.navbar a:hover {
-    color: #ffcc00;
+/* ========================= MENIU TELEFON ========================= */
+#menu-toggle {
+    display: none;
 }
 
-/* SECTIUNI */
-section {
-    padding: 80px 20px;
-    margin-top: 70px;
-}
-
-/* HERO SECTION */
-.hero {
-    background: url("hero.jpg") center/cover no-repeat;
+.menu-btn {
+    display: none;
+    font-size: 30px;
     color: white;
-    text-align: center;
-    padding: 150px 20px;
+    cursor: pointer;
+    user-select: none;
 }
 
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+/* Telefon */
+@media(max-width: 720px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .navlinks {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(3,6,10,0.97);
+        backdrop-filter: blur(4px);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        gap: 25px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .3s ease;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    #menu-toggle:checked + .menu-btn + .navlinks {
+        max-height: 300px;
+    }
+
 }
 
-.hero p {
+/* ========================= SECTIONS ========================= */
+.section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+.blog-article {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    padding: 35px 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+/* ========================= CHAT BUTTON ========================= */
+.chat-btn {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    background: #25D366;
+    color: #fff;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 22px;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.18);
+    cursor: pointer;
+    z-index: 999;
 }
 
-/* MOBILE—PĂSTRĂM MENIUL IDENTIC, DOAR MICȘORĂM FONTURILE */
-@media (max-width: 600px) {
-    .navbar {
-        gap: 12px;
-    }
-
-    .navbar a {
-        font-size: 15px;
-    }
-
-    .logo {
-        font-size: 18px;
-    }
+/* ========================= FOOTER ========================= */
+.footer {
+    background: #06101a;
+    padding: 24px;
+    text-align: center;
+    color: var(--muted);
+    margin-top: auto;
 }
-
