@@ -4,17 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Transparență - Capitility Forex</title>
-<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="style.css?v=1000">
+
+<style>
+/* Fade-in / Fade-out */
+body { opacity:0; transition:opacity .5s ease-in-out; }
+body.loaded { opacity:1; }
+body.fade-out { opacity:0; }
+</style>
 </head>
 
-<body class="trans transparenta">
+<body>
+<div class="home-bg">
 
 <header>
   <div class="nav">
-
     <div class="brand">Capitility Forex</div>
 
-    <!-- Meniu telefon (obligatoriu) -->
     <input type="checkbox" id="menu-toggle">
     <label class="menu-btn" for="menu-toggle">&#9776;</label>
 
@@ -23,48 +30,65 @@
       <a href="planuri.html">Planuri</a>
       <a href="despre-noi.html">Despre noi</a>
       <a href="blog.html">Blog</a>
-      <a href="transparenta.html">Transparență</a>
+      <a href="transparenta.html" class="active">Transparență</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="mobile-menu">
+      <a href="index.html">Acasă</a>
+      <a href="planuri.html">Planuri</a>
+      <a href="despre-noi.html">Despre noi</a>
+      <a href="blog.html">Blog</a>
+      <a href="transparenta.html" class="active">Transparență</a>
       <a href="contact.html">Contact</a>
     </div>
 
   </div>
 </header>
 
+
 <section class="section">
-  <h2>Transparență și încredere</h2>
+<h1 class="home-title">Transparență</h1>
 
-  <p>
-    La Capitility Forex, transparența este fundamentul relației dintre noi și investitori.
-    Punem la dispoziție informații clare despre identitatea companiei, locația sediului,
-    documentele oficiale și procesele interne, astfel încât fiecare investitor să știe
-    cu cine lucrează și în ce sistem își plasează capitalul.
-  </p>
+<div class="trans-row">
 
-  <div class="trans-row" style="margin-top:18px">
-    <div class="trans-item">
-      <h4>Sediul Capitility Forex</h4>
-      <p>
-        Capitility Forex își desfășoară activitatea în cadrul unui sediu modern, special
-        conceput pentru operațiuni financiare și dezvoltare tehnologică. Clădirea reflectă
-        profesionalismul companiei și oferă un mediu dedicat echipei de analiză, tehnologie
-        și suport investitori.
-      </p>
-      <img src="office.jpg" alt="sediu">
-    </div>
-
-    <div class="trans-item">
-      <h4>Certificatul oficial de înregistrare</h4>
-      <p>
-        Capitility Forex este înregistrată ca Private Limited Company, iar statutul său
-        juridic este documentat printr-un certificat oficial emis conform legislației
-        în vigoare.
-      </p>
-      <img src="cert.jpg" alt="certificat">
-    </div>
+  <div class="trans-item">
+      <h3 style="color:#f2c94c;font-size:22px;">Certificat Înregistrare</h3>
+      <p>Document oficial de înregistrare a societății Capitility Forex.</p>
+      <img src="certificat1.jpg" alt="Certificat 1">
   </div>
+
+  <div class="trans-item">
+      <h3 style="color:#f2c94c;font-size:22px;">Certificat Legalitate</h3>
+      <p>Certifică conformitatea activităților desfășurate.</p>
+      <img src="certificat2.jpg" alt="Certificat 2">
+  </div>
+
+</div>
+
 </section>
 
-<footer class="footer">© 2025 Capitility Forex</footer>
+<a href="https://t.me/SuportCapitilityForex" class="chat-btn">Chat</a>
 
+<script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("loaded");
+});
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        const href = this.getAttribute("href");
+        if (!href.startsWith("#") && !href.startsWith("javascript")) {
+            e.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => window.location = href, 350);
+        }
+    });
+});
+</script>
+
+</div>
 </body>
 </html>
+
