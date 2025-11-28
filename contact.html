@@ -1,13 +1,99 @@
-<!doctype html><html lang='ro'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Contact - Capitility Forex</title><link rel="stylesheet" href="style.css"></head><body class="contact contact" >
-<header><div class="nav"><div class="brand">Capitility Forex</div><div class="navlinks"><a href="index.html">Acasă</a><a href="planuri.html">Planuri</a><a href="despre-noi.html">Despre noi</a><a href="blog.html">Blog</a><a href="transparenta.html">Transparență</a><a href="contact.html">Contact</a></div></div></header>
-<section class="section">
-  <div class="contact-box overlay">
-    <h2>Contact</h2>
-    <p><strong>Contactează-ne:</strong></p>
-    <p>📧 Email: <a href="mailto:forexcapitility@gmail.com">forexcapitility@gmail.com</a></p>
-    <p>📞 WhatsApp: <button class="btn" onclick="window.open('https://wa.me/40785963981','_blank')">Contactează pe WhatsApp</button></p>
-    <p>Alătură-te canalului Telegram: <a href="https://t.me/CapilitilyForexR0" target="_blank">https://t.me/CapilitilyForexR0</a></p>
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact - Capitility Forex</title>
+
+<link rel="stylesheet" href="style.css?v=1000">
+
+<style>
+/* Fade-in / Fade-out */
+body { opacity:0; transition:opacity .5s ease-in-out; }
+body.loaded { opacity:1; }
+body.fade-out { opacity:0; }
+</style>
+</head>
+
+<body>
+<div class="home-bg">
+
+<header>
+  <div class="nav">
+    <div class="brand">Capitility Forex</div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label class="menu-btn" for="menu-toggle">&#9776;</label>
+
+    <div class="navlinks">
+      <a href="index.html">Acasă</a>
+      <a href="planuri.html">Planuri</a>
+      <a href="despre-noi.html">Despre noi</a>
+      <a href="blog.html">Blog</a>
+      <a href="transparenta.html">Transparență</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+
+    <div class="mobile-menu">
+      <a href="index.html">Acasă</a>
+      <a href="planuri.html">Planuri</a>
+      <a href="despre-noi.html">Despre noi</a>
+      <a href="blog.html">Blog</a>
+      <a href="transparenta.html">Transparență</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+
   </div>
+</header>
+
+<section class="section">
+
+<div class="contact-wrapper">
+
+    <h2 style="color:#f2c94c;">Contact</h2>
+    <h3>Suntem aici pentru tine</h3>
+
+    <p>
+        Dacă ai întrebări legate de investiții, retrageri, planuri sau ai nevoie de suport tehnic,
+        echipa Capitility Forex este disponibilă 7/7.
+    </p>
+
+    <p><strong>Email suport:</strong><br>
+    contact@capitilityforex.com</p>
+
+    <p><strong>Telegram suport:</strong><br>
+    <a href="https://t.me/SuportCapitilityForex" style="color:#f2c94c;">@SuportCapitilityForex</a></p>
+
+    <p><strong>WhatsApp suport:</strong></p>
+
+    <a href="https://wa.me/40700000000" class="btn-whatsapp">
+        Scrie pe WhatsApp
+    </a>
+
+</div>
+
 </section>
-<footer class='footer'>© 2025 Capitility Forex</footer>
-</body></html>
+
+<a href="https://t.me/SuportCapitilityForex" class="chat-btn">Chat</a>
+
+<script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("loaded");
+});
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        const href = this.getAttribute("href");
+        if (!href.startsWith("#") && !href.startsWith("javascript")) {
+            e.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => window.location = href, 350);
+        }
+    });
+});
+</script>
+
+</div>
+</body>
+</html>
