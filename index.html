@@ -1,49 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capitility Forex - Acasă</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Capitility Forex</title>
+<link rel="stylesheet" href="style.css?v=1000">
+
+<style>
+/* Fade-in + Fade-out */
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+body.loaded {
+    opacity: 1;
+}
+body.fade-out {
+    opacity: 0;
+}
+</style>
 </head>
-<body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">Capitility Forex</div>
+<body class="index">
+<div class="home-bg">
 
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+<header>
+  <div class="nav">
 
-        <ul class="menu-links">
-            <li><a href="index.html">Acasă</a></li>
-            <li><a href="planuri.html">Planuri</a></li>
-            <li><a href="despre-noi.html">Despre noi</a></li>
-            <li><a href="transparenta.html">Transparență</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="brand">Capitility Forex</div>
 
-    <!-- BANNER -->
-    <header class="hero">
-        <h1>Bine ai venit la Capitility Forex</h1>
-        <p>Investiții inteligente într-un mediu transparent și profesionist.</p>
-        <a href="planuri.html" class="cta-button">Vezi planurile</a>
-    </header>
+    <!-- Buton meniu telefon -->
+    <input type="checkbox" id="menu-toggle">
+    <label class="menu-btn" for="menu-toggle">&#9776;</label>
 
-    <!-- SECȚIUNE PREZENTARE -->
-    <section class="intro">
-        <h2>De ce să alegi Capitility Forex?</h2>
+    <div class="navlinks">
+      <a href="index.html">Acasă</a>
+      <a href="planuri.html">Planuri</a>
+      <a href="despre-noi.html">Despre noi</a>
+      <a href="blog.html">Blog</a>
+      <a href="transparenta.html">Transparență</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+    <div class="blog-article">
+
+        <h1 style="color:#FFD700;font-size:32px;font-weight:700;margin-bottom:20px;text-align:center">
+            Capitility Forex – Calea ta către libertate financiară
+        </h1>
+
         <p>
-            Oferim servicii profesionale de administrare și optimizare a portofoliilor de investiții Forex.
-            Echipa noastră analizează piața în timp real pentru a oferi rezultate cât mai bune.
+            Capitility Forex este o societate privată înființată la 9 iunie 2019, construită pe încrederea și aprecierea
+            clienților și investitorilor din întreaga lume...
         </p>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>&copy; 2025 Capitility Forex | Toate drepturile rezervate</p>
-    </footer>
+    </div>
+</section>
 
+<a href="https://t.me/SuportCapitilityForex" class="chat-btn">Chat</a>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("loaded");
+});
+
+/* Fade-out la schimbarea paginilor */
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+
+        if (!href.startsWith("#") && !href.startsWith("javascript")) {
+            e.preventDefault();
+            document.body.classList.add("fade-out");
+
+            setTimeout(() => {
+                window.location = href;
+            }, 350);
+        }
+    });
+});
+</script>
+
+</div>
 </body>
 </html>
