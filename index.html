@@ -25,37 +25,41 @@ body.fade-out {
 <body class="index">
 <div class="home-bg">
 
-<header>
-  <div class="nav">
+<!-- ====================== HEADER NOU ====================== -->
+
+<header class="header">
+  <div class="nav-container">
 
     <div class="brand">Capitility Forex</div>
 
-    <!-- Meniu telefon -->
+    <!-- Buton meniu mobil -->
     <input type="checkbox" id="menu-toggle">
     <label class="menu-btn" for="menu-toggle">&#9776;</label>
 
-    <!-- Meniu desktop -->
-    <div class="navlinks">
+    <!-- Meniu Desktop -->
+    <nav class="navlinks">
       <a href="index.html">Acasă</a>
       <a href="planuri.html">Planuri</a>
       <a href="despre-noi.html">Despre noi</a>
       <a href="blog.html">Blog</a>
       <a href="transparenta.html">Transparență</a>
       <a href="contact.html">Contact</a>
-    </div>
+    </nav>
 
-    <!-- Meniu telefon (ce apare când apeși ☰) -->
-    <div class="mobile-menu">
+    <!-- Meniu Mobil -->
+    <nav class="mobile-menu">
       <a href="index.html">Acasă</a>
       <a href="planuri.html">Planuri</a>
       <a href="despre-noi.html">Despre noi</a>
       <a href="blog.html">Blog</a>
       <a href="transparenta.html">Transparență</a>
       <a href="contact.html">Contact</a>
-    </div>
+    </nav>
 
   </div>
 </header>
+
+<!-- ====================== /HEADER NOU ====================== -->
 
 <section class="section">
     <div class="blog-article">
@@ -135,6 +139,4 @@ document.querySelectorAll("a").forEach(link => {
 </div>
 </body>
 </html>
-
-
 
