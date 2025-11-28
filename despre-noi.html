@@ -3,61 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Despre noi - Capitility Forex</title>
-<link rel="stylesheet" href="style.css?v=1001">
+<title>Despre Noi - Capitility Forex</title>
+
+<link rel="stylesheet" href="style.css?v=1000">
 
 <style>
-/* Fade-in page */
-body { opacity: 0; transition: opacity .5s ease-in-out; }
-body.loaded { opacity: 1; }
-
-/* Meniu telefon */
-#menu-toggle { display:none; }
-.menu-btn {
-    display:none;
-    font-size:30px;
-    color:white;
-    cursor:pointer;
-}
-@media(max-width:720px){
-    .menu-btn { display:block; }
-    .navlinks {
-        position:absolute;
-        top:60px;
-        left:0;
-        width:100%;
-        background:rgba(3,6,10,0.97);
-        display:flex;
-        flex-direction:column;
-        gap:25px;
-        padding:25px 0;
-        text-align:center;
-        max-height:0;
-        overflow:hidden;
-        transition:max-height .3s ease;
-    }
-    #menu-toggle:checked + .menu-btn + .navlinks {
-        max-height:350px;
-    }
-}
+/* Fade-in / Fade-out */
+body { opacity:0; transition:opacity 0.5s ease-in-out; }
+body.loaded { opacity:1; }
+body.fade-out { opacity:0; }
 </style>
 </head>
 
-<body>
+<body class="index">
+<div class="home-bg">
 
 <header>
   <div class="nav">
-
     <div class="brand">Capitility Forex</div>
 
-    <!-- MENIUL RESPONSIVE (identic cu index) -->
     <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-btn">&#9776;</label>
+    <label class="menu-btn" for="menu-toggle">&#9776;</label>
 
     <div class="navlinks">
       <a href="index.html">Acasă</a>
       <a href="planuri.html">Planuri</a>
-      <a href="despre-noi.html">Despre noi</a>
+      <a href="despre-noi.html" class="active">Despre noi</a>
+      <a href="blog.html">Blog</a>
+      <a href="transparenta.html">Transparență</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="mobile-menu">
+      <a href="index.html">Acasă</a>
+      <a href="planuri.html">Planuri</a>
+      <a href="despre-noi.html" class="active">Despre noi</a>
       <a href="blog.html">Blog</a>
       <a href="transparenta.html">Transparență</a>
       <a href="contact.html">Contact</a>
@@ -67,145 +47,73 @@ body.loaded { opacity: 1; }
 </header>
 
 <section class="section">
-  <div class="blog-article">
+<div class="blog-article">
 
-    <h2 style="color:#f2c94c;margin-bottom:20px">Despre noi</h2>
+<h1 class="home-title">Despre Capitility Forex</h1>
 
-    <!-- TOT TEXTUL TĂU ESTE IDENTIC, NU AM MODIFICAT NICIUN CARACTER -->
-    <div class="text-block">
-      <p>
-        Capitility Forex este o companie dedicată cercetării, dezvoltării și implementării tehnologiilor avansate 
-        în tranzacționarea Forex și administrarea capitalului. Din anul 2019, ne-am concentrat pe crearea unui 
-        ecosistem stabil, transparent și performant, construit pe inovație și pe utilizarea algoritmilor de ultimă generație.
-      </p>
+<p>Capitility Forex este o platformă modernă de investiții, fondată cu scopul de a face tranzacționarea accesibilă pentru oricine — indiferent de experiență sau buget. Ne concentrăm pe transparență, siguranță și profit stabil.</p>
 
-      <p>
-        În centrul activității noastre se află analiza financiară profesionistă, automatizarea proceselor și o abordare 
-        disciplinată a managementului riscului. Obiectivul nostru este să oferim investitorilor acces la strategii verificate, 
-        eficiente și ușor de utilizat, indiferent de nivelul lor de experiență.
-      </p>
+<br>
 
-      <h3>⭕️ Tehnologie proprie, construită pentru performanță</h3>
-      <p>
-        Capitility Forex dezvoltă intern un sistem automatizat de tranzacționare, optimizat constant pentru a funcționa 
-        în condiții reale de piață. Acesta rulează pe perechi valutare majore și pe aur, analizând piața în timp real prin:
-      </p>
+<h2 style="margin-top:20px;">🎯 Misiunea noastră</h2>
+<p>Misiunea noastră este să oferim investitorilor rezultate reale, bazate pe strategie, disciplină și analiză profesională. Nu promitem miracole — promitem performanță constantă.</p>
 
-      <ul>
-        <li>algoritmi de identificare a trendului</li>
-        <li>evaluarea volumului și a volatilității</li>
-        <li>decizii automatizate bazate pe reguli testate</li>
-        <li>execuție instantanee a tranzacțiilor</li>
-      </ul>
+<br>
 
-      <p>
-        Strategia este construită pentru consistență, stabilitate și repetabilitate, fiind monitorizată zilnic de echipa tehnică.
-      </p>
+<h2>🛡 Valorile noastre</h2>
+<ul>
+<li><strong>Transparență totală</strong> – arătăm rezultatele reale, zilnic.</li>
+<li><strong>Siguranță</strong> – fără riscuri inutile, fără expunere exagerată.</li>
+<li><strong>Profesionalism</strong> – strategii testate și optimizate constant.</li>
+<li><strong>Comunicare</strong> – suntem oricând disponibili pentru clienții noștri.</li>
+</ul>
 
-      <h3>⭕️ Control strict al riscului</h3>
-      <ul>
-        <li>expunere maximă de 1% per tranzacție</li>
-        <li>închiderea tuturor pozițiilor la finalul fiecărei zile</li>
-        <li>ajustarea parametrilor în funcție de piață</li>
-        <li>monitorizare continuă de către analiștii intern</li>
-      </ul>
+<br>
 
-      <h3>⭕️ Performanță bazată pe rezultate reale</h3>
-      <p>
-        Sistemul nostru a înregistrat în timp rezultate zilnice medii între 4.5% și 7.2%, conform datelor interne 
-        analizate constant. Modelul este scalabil, permițând obținerea acelorași procente indiferent de mărimea contului.
-      </p>
+<h2>💼 Experiența noastră</h2>
+<p>Venim cu experiență în analiza pieței, tranzacționare algoritmică și risk management. Combinăm tehnologia cu experiența umană pentru cele mai bune rezultate.</p>
 
-      <h3>🔅 Misiunea Capitility Forex 🔅</h3>
-      <p>
-        Scopul nostru este să oferim investitorilor soluții profesionale într-un mod accesibil și sigur, ghidându-ne după:
-      </p>
+<br>
 
-      <ul>
-        <li>transparență</li>
-        <li>disciplină financiară</li>
-        <li>inovație tehnologică</li>
-        <li>responsabilitate față de capital</li>
-      </ul>
-    </div>
+<h2>🤝 De ce să lucrezi cu noi?</h2>
+<ul>
+<li>Profit zilnic, stabil</li>
+<li>Risc minim prin diversificare</li>
+<li>Actualizări în timp real</li>
+<li>Retrageri rapide</li>
+<li>Asistență dedicată</li>
+</ul>
 
-    <hr style="margin:40px 0;opacity:.2">
+<br>
 
-    <div class="text-block">
-      <h3>Forex – Sistem Automatizat de Execuție</h3>
+<h2>📈 Concluzie</h2>
+<p>Capitility Forex este aici pentru a face investițiile simple, sigure și profitabile pentru toată lumea.</p>
 
-      <p>
-        Soluția noastră Forex utilizează un motor algoritmic de tranzacționare proiectat pentru execuție precisă 
-        în condiții de volatilitate ridicată. Sistemul operează pe fluxuri de date în timp real și identifică 
-        micro-oportunități intraday.
-      </p>
-
-      <h4>⭕️ Caracteristici tehnice</h4>
-      <ul>
-        <li>Analiză în timp real a structurii pieței (trend, volum, impuls, volatilitate).</li>
-        <li>Execuție automată pe EUR/USD, GBP/USD și XAU/USD.</li>
-        <li>Model de intrare cu validări secvențiale.</li>
-        <li>Optimizare continuă pe baza feedback-ului algoritmic.</li>
-      </ul>
-
-      <h4>⭕️ Management al riscului</h4>
-      <ul>
-        <li>Limitare dinamică a expunerii la max. 1% per poziție.</li>
-        <li>Închidere automată a pozițiilor la finalul zilei.</li>
-        <li>Protecție împotriva mișcărilor bruște de preț.</li>
-      </ul>
-
-      <h4>⭕️ Obiectiv operațional</h4>
-      <p>
-        Menținerea unei arhitecturi stabile și scalabile, capabile să reproducă aceeași logică indiferent de 
-        capitalul administrat.
-      </p>
-    </div>
-
-    <hr style="margin:40px 0;opacity:.2">
-
-    <div class="text-block">
-      <h3>Crypto – Infrastructură Algoritmică pentru Active Digitale</h3>
-
-      <p>
-        Sistemul nostru pentru piața crypto este construit pe un framework multi-layer optimizat pentru active 
-        cu volatilitate ridicată, analizând continuu fluxurile de preț și lichiditatea.
-      </p>
-
-      <h4>⭕️ Caracteristici tehnice</h4>
-      <ul>
-        <li>Monitorizare în timp real a pieței pe BTC, ETH și LTC.</li>
-        <li>Detectarea automată a micro-trendurilor.</li>
-        <li>Optimizarea intrărilor prin modele statistice.</li>
-        <li>Execuție automatizată cu confirmări multiple.</li>
-      </ul>
-
-      <h4>⭕️ Controlul riscului</h4>
-      <ul>
-        <li>Limitare algoritmică a expunerii pe fiecare activ.</li>
-        <li>Protecție la creșteri bruște de volatilitate.</li>
-        <li>Poziții aliniate ciclurilor intraday.</li>
-      </ul>
-
-      <h4>⭕️ Obiectiv operațional</h4>
-      <p>
-        Furnizarea unui mecanism stabil și scalabil de tranzacționare, capabil să mențină consistența logicii 
-        indiferent de volumul portofoliului.
-      </p>
-    </div>
-
-  </div>
+</div>
 </section>
-
-<footer class="footer">© 2025 Capitility Forex</footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("loaded");
-});
-</script>
 
 <a href="https://t.me/SuportCapitilityForex" class="chat-btn">Chat</a>
 
+<script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("loaded");
+});
+
+document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+        if (!href.startsWith("#") && !href.startsWith("javascript")) {
+            e.preventDefault();
+            document.body.classList.add("fade-out");
+            setTimeout(() => { window.location = href; }, 350);
+        }
+    });
+});
+</script>
+
+</div>
 </body>
 </html>
+
