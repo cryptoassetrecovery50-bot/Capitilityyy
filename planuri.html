@@ -1,24 +1,24 @@
 <!doctype html>
 <html lang="ro">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Planuri - Capitility Forex</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Planuri - Capitility Forex</title>
 
-<link rel="stylesheet" href="style.css?v=1000">
+  <link rel="stylesheet" href="style.css?v=1000">
 
-<style>
-body { opacity:0; transition:opacity 0.5s ease-in-out; }
-body.loaded { opacity:1; }
-body.fade-out { opacity:0; }
-</style>
+  <style>
+    body { opacity:0; transition:opacity 0.5s ease-in-out; }
+    body.loaded { opacity:1; }
+    body.fade-out { opacity:0; }
+    .modal-overlay { display: none; /* Ascunde modalul initial */ }
+  </style>
 </head>
 
 <body class="index">
 <header>
   <div class="nav">
     <div class="brand">Capitility Forex</div>
-
     <div class="navlinks">
       <a href="index.html">Acasă</a>
       <a href="planuri.html" class="active">Planuri</a>
@@ -32,11 +32,10 @@ body.fade-out { opacity:0; }
 
 <section class="section">
 <div class="blog-article">
+  <h1 class="home-title">Planuri de Investiție Profitabile</h1>
+  <p>Alege planul potrivit pentru obiectivele tale financiare.</p>
 
-<h1 class="home-title">Planuri de Investiție Profitabile</h1>
-<p>Alege planul potrivit pentru obiectivele tale financiare.</p>
-
-<div class="card-row">
+  <div class="card-row">
 
     <!-- PLAN 1 -->
     <div class="plan-card">
@@ -45,7 +44,7 @@ body.fade-out { opacity:0; }
         <p><strong>Randament zilnic:</strong> 4.5% (≈ 18$ / zi)</p>
         <p><strong>Randament 30 zile:</strong> 540$</p>
         <p>Perfect pentru începători.</p>
-        <a class="btn plan-btn">Alege planul</a>
+        <a class="btn plan-btn" data-modal="plan1Modal">Alege planul</a>
     </div>
 
     <!-- PLAN 2 -->
@@ -55,7 +54,7 @@ body.fade-out { opacity:0; }
         <p><strong>Randament zilnic:</strong> 4.8% (≈ 33.6$ / zi)</p>
         <p><strong>Randament 30 zile:</strong> 1008$</p>
         <p>Ideal pentru avansare constantă.</p>
-        <a class="btn plan-btn">Alege planul</a>
+        <a class="btn plan-btn" data-modal="plan2Modal">Alege planul</a>
     </div>
 
     <!-- PLAN 3 -->
@@ -65,7 +64,7 @@ body.fade-out { opacity:0; }
         <p><strong>Randament zilnic:</strong> 5.5% (≈ 55$ / zi)</p>
         <p><strong>Randament 30 zile:</strong> 1650$</p>
         <p>Recomandat investitorilor consecvenți.</p>
-        <a class="btn plan-btn">Alege planul</a>
+        <a class="btn plan-btn" data-modal="plan3Modal">Alege planul</a>
     </div>
 
     <!-- PLAN 4 -->
@@ -75,7 +74,7 @@ body.fade-out { opacity:0; }
         <p><strong>Randament zilnic:</strong> 6% (≈ 90$ / zi)</p>
         <p><strong>Randament 30 zile:</strong> 2700$</p>
         <p>Excelent pentru portofolii optimizate.</p>
-        <a class="btn plan-btn">Alege planul</a>
+        <a class="btn plan-btn" data-modal="plan4Modal">Alege planul</a>
     </div>
 
     <!-- PLAN 5 -->
@@ -85,7 +84,7 @@ body.fade-out { opacity:0; }
         <p><strong>Randament zilnic:</strong> 6.5% (≈ 130$ / zi)</p>
         <p><strong>Randament 30 zile:</strong> 3900$</p>
         <p>Pentru profituri ridicate.</p>
-        <a class="btn plan-btn">Alege planul</a>
+        <a class="btn plan-btn" data-modal="plan5Modal">Alege planul</a>
     </div>
 
     <!-- PLAN 6 -->
@@ -95,24 +94,23 @@ body.fade-out { opacity:0; }
         <p><strong>Randament zilnic:</strong> 7.2% (≈ 216$ / zi)</p>
         <p><strong>Randament 30 zile:</strong> 6480$</p>
         <p>Pentru investitori premium.</p>
-        <a class="btn plan-btn">Alege planul</a>
+        <a class="btn plan-btn" data-modal="plan6Modal">Alege planul</a>
     </div>
 
-</div>
+  </div>
 </div>
 </section>
 
 <!-- MODAL -->
-<div id="planModal" class="modal-overlay">
+<div id="plan1Modal" class="modal-overlay">
     <div class="modal-box">
-        <h2 id="modalTitle">Plan</h2>
+        <h2 id="modalTitle">Plan 1 – Detalii</h2>
 
         <input type="email" placeholder="Introduceți adresa de email">
         <input type="text" placeholder="Introduceți adresa de primire">
         <input type="text" id="modalPlanName" readonly>
 
         <h3>Metode de plată:</h3>
-
         <p><strong>USDT TRC20</strong><br>TSQWY2SbBxKGJi6FDS0aANivMYoMNESUCT8</p>
 
         <p><strong>USDT ERC20</strong><br>0xEF8335729750Ca5f12f1bb7dfAB988071aa1C0</p>
@@ -133,29 +131,26 @@ body.fade-out { opacity:0; }
 <script src="script.js"></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    document.body.classList.add("loaded");
-});
-
 // ✦ DESCHIDERE MODAL
 document.querySelectorAll(".plan-btn").forEach(btn => {
     btn.addEventListener("click", function(e) {
         e.preventDefault();
 
         const planName = this.parentElement.querySelector("h2").innerText;
+        const modalId = this.getAttribute("data-modal"); // Folosim data-modal pentru a lua ID-ul corect
+
         document.getElementById("modalTitle").innerText = planName;
         document.getElementById("modalPlanName").value = planName;
 
-        document.getElementById("planModal").style.display = "flex";
+        document.getElementById(modalId).style.display = "flex"; // Deschide modalul corect
     });
 });
 
 // ✦ ÎNCHIDERE MODAL
 document.getElementById("closeModal").addEventListener("click", () => {
-    document.getElementById("planModal").style.display = "none";
+    document.getElementById("plan1Modal").style.display = "none"; // Închide modalul corect
 });
 </script>
 
 </body>
 </html>
-
