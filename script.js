@@ -1,16 +1,21 @@
 // Deschide modalul corect cu titlu și plan
-function openModal(title, plan){
+function openModal(title, plan) {
+  // Actualizează titlul și planul
   document.getElementById('modalTitle').innerText = title;
   document.getElementById('modalPlanName').value = plan;
-  document.getElementById('modalOverlay').style.visibility = 'visible';
-  document.getElementById('modalOverlay').style.opacity = '1';
+  
+  // Deschide modalul corect
+  const modal = document.getElementById(plan); // Folosește ID-ul planului pentru a deschide modalul
+  modal.style.visibility = 'visible';
+  modal.style.opacity = '1';
 }
 
 // Închide modalul
-function closeModal(){
-  document.getElementById('modalOverlay').style.opacity = '0';
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  modal.style.opacity = '0';
   setTimeout(() => {
-    document.getElementById('modalOverlay').style.visibility = 'hidden';
+    modal.style.visibility = 'hidden';
   }, 200);
 }
 
@@ -31,10 +36,16 @@ document.querySelectorAll(".plan-btn").forEach(btn => {
     const modalId = this.getAttribute("data-modal"); // Obține ID-ul modalului
 
     // Deschide modalul folosind funcția openModal
-    openModal(planName, planName);
+    openModal(planName, modalId);
   });
 });
 
-// Închidere modal
-document.getElementById("closeModal").addEventListener("click", closeModal);
+// Închiderea modalurilor
+document.querySelectorAll(".closeModal").forEach(closeBtn => {
+  closeBtn.addEventListener("click", function() {
+    const modalId = this.getAttribute("data-modal");
+    closeModal(modalId);
+  });
+});
+
 
