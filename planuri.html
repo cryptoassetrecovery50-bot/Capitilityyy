@@ -101,24 +101,16 @@
 </div>
 </section>
 
-<!-- MODAL -->
+<!-- MODALURI -->
 <div id="plan1Modal" class="modal-overlay">
     <div class="modal-box">
-        <h2 id="modalTitle">Plan 1 – Detalii</h2>
-
+        <h2>Plan 1 – Detalii</h2>
         <input type="email" placeholder="Introduceți adresa de email">
         <input type="text" placeholder="Introduceți adresa de primire">
         <input type="text" id="modalPlanName" readonly>
-
         <h3>Metode de plată:</h3>
         <p><strong>USDT TRC20</strong><br>TSQWY2SbBxKGJi6FDS0aANivMYoMNESUCT8</p>
-
         <p><strong>USDT ERC20</strong><br>0xEF8335729750Ca5f12f1bb7dfAB988071aa1C0</p>
-
-        <p><strong>USDC TRC20</strong><br>TSQWY2SbBxKGJi6FDS0aANivMYoMNESUCT8</p>
-
-        <p><strong>USDC ERC20</strong><br>0xEF8335729750Ca5f12f1bb7dfAB988071aa1C0</p>
-
         <div class="modal-buttons">
             <button class="plan-activate-btn">Activează Plan</button>
             <button id="closeModal">Închide</button>
@@ -126,7 +118,23 @@
     </div>
 </div>
 
-<a href="https://t.me/SuportCapitilityForex" class="chat-btn">Chat</a>
+<div id="plan2Modal" class="modal-overlay">
+    <div class="modal-box">
+        <h2>Plan 2 – Detalii</h2>
+        <input type="email" placeholder="Introduceți adresa de email">
+        <input type="text" placeholder="Introduceți adresa de primire">
+        <input type="text" id="modalPlanName" readonly>
+        <h3>Metode de plată:</h3>
+        <p><strong>USDT TRC20</strong><br>TSQWY2SbBxKGJi6FDS0aANivMYoMNESUCT8</p>
+        <p><strong>USDT ERC20</strong><br>0xEF8335729750Ca5f12f1bb7dfAB988071aa1C0</p>
+        <div class="modal-buttons">
+            <button class="plan-activate-btn">Activează Plan</button>
+            <button id="closeModal">Închide</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modaluri pentru celelalte planuri (3, 4, 5, 6) se adaugă similar, doar cu ID-uri diferite. -->
 
 <script src="script.js"></script>
 
@@ -137,7 +145,7 @@ document.querySelectorAll(".plan-btn").forEach(btn => {
         e.preventDefault();
 
         const planName = this.parentElement.querySelector("h2").innerText;
-        const modalId = this.getAttribute("data-modal"); // Folosim data-modal pentru a lua ID-ul corect
+        const modalId = this.getAttribute("data-modal"); // Obține ID-ul modalului
 
         document.getElementById("modalTitle").innerText = planName;
         document.getElementById("modalPlanName").value = planName;
